@@ -1,4 +1,5 @@
 #!/bin/bash
+###nohup sh data_load.sh > data_load.log 2>&1 &
 
 d=2015-01-02
 while [ "$d" != 2015-01-05 ]; do
