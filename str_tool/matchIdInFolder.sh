@@ -4,7 +4,6 @@
 for d in /spark-tmp0/TD/delivery_details_match/s3_sync/*/ ; do
     #echo "$d"
     for d2 in $d*/; do
-        #echo "$d2"
         new_d=`echo $d2 | sed -e "s/s3_sync/s3_sync_sort/g"`
         mkdir -p $new_d
         for file in $d2*; do
@@ -33,7 +32,6 @@ for d in /spark-tmp0/TD/delivery_details_match/s3_sync_sort/*/ ; do
     echo $d
     for d2 in $d*/; do
         for file in $d2*; do
-            #echo $file
             match_f=`echo $file | sed -e "s/s3_sync_sort/s3_sync_match/g"`
             orig_row=`cat $file | wc -l`
             match_row=`cat $match_f | wc -l`
