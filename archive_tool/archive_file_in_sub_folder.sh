@@ -9,3 +9,8 @@ for d in /spark-tmp0/TD/delivery_details_match/s3_sync_match/*/ ; do
         done
     done
 done
+
+
+# a smarter way to archive files under current folder (gzip)
+find . -type f ! -name '*.gz' -exec gzip "{}" \;
+
